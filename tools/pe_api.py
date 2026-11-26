@@ -262,9 +262,6 @@ def full_estimate(text, platform_id, size, plan_id):
         "verdictText": est["verdictText"],
         "confidence": platform.get("confidence") or platform.get("unverified") or "Rough estimate, not a quote.",
     }
-    if platform["kind"] != "tokens":
-        fit = cheapest_free_fit(size, type_key)
-        if fit:
-            fit = {"platform": fit["platform"], "rangeText": fit["rangeText"], "headroom": fit["headroom"]}
-            result["cheapestFreeFit"] = fit
+    if platform["kind"] == "credits" and platform.get("freeAllowance") and platform.get("freeUnit") and platform.get("freePeriod"):
+        result["freePlan"] = {"allowance": platform["freeAllowance"], "unit": platform["freeUnit"], "period": platform["freePeriod"]}
     return result

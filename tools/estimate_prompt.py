@@ -43,16 +43,16 @@ class EstimatePromptTool(Tool):
 
 def estimate_card(result, pro, remaining):
     """Markdown card mirroring the extension's cost bubble."""
-    fit = result.get("cheapestFreeFit")
+    free = result.get("freePlan")
     if result.get("plan") == "Pay per use":
         fit_line = "Pay-per-use API, billed per token. No free tier tracked."
-    elif fit and fit["platform"] != result["platform"] and fit.get("headroom", 0) >= 1:
+    elif free:
         fit_line = (
-            "Rough guide: this fits in %s's free tier (about %s). "
-            "Check their current limits first." % (fit["platform"], fit["rangeText"])
+            "Rough guide: %s's free plan is %s %s a %s. "
+            "Check their current limits first." % (result["platform"], "{:,}".format(free["allowance"]), free["unit"], free["period"])
         )
     else:
-        fit_line = "Rough guide: this is likely beyond the free tiers we track."
+        fit_line = ""
     if pro:
         plan_line = "**Pro plan** \u00b7 unlimited estimates."
     elif remaining is not None:
