@@ -18,7 +18,7 @@ class EstimatePromptTool(Tool):
         platform_id = (tool_parameters.get("platform") or "").strip().lower()
         platform = platform_by_id(platform_id)
         if not platform:
-            raise PEError("Choose one of: chatgpt, claude, gemini, grok, town, manus, lovable, bolt, replit, openai_api, anthropic_api, gemini_api, deepseek, xai_api, mistral, groq, together, fireworks, openrouter, qwen, zhipu, moonshot, cohere, ollama.")
+            raise PEError("Choose one of: chatgpt, claude, gemini, grok, town, manus, lovable, bolt, replit, kimi, qwen_chat, v0, elevenlabs, suno, runway, pika, openai_api, anthropic_api, gemini_api, deepseek, xai_api, mistral, groq, together, fireworks, openrouter, qwen, zhipu, moonshot, cohere, ollama.")
         size = (tool_parameters.get("size") or "medium").strip().lower()
         if size not in ("small", "medium", "big"):
             size = "medium"
@@ -58,10 +58,10 @@ def estimate_card(result, pro, remaining):
     elif remaining is not None:
         plan_line = (
             "**Free plan** \u00b7 %s of 5 free estimates left today. "
-            "[Upgrade to Pro](https://promptefficiently.com/app) for unlimited estimates." % remaining
+            "[Upgrade to Pro](https://promptefficiently.com/app?ref=dify-plugin) for unlimited estimates." % remaining
         )
     else:
-        plan_line = "[Upgrade to Pro](https://promptefficiently.com/app) for unlimited estimates."
+        plan_line = "[Upgrade to Pro](https://promptefficiently.com/app?ref=dify-plugin) for unlimited estimates."
     return (
         "### About %s on %s\n\n"
         "**Plan:** %s \u00b7 **Task size:** %s \u00b7 **Input:** ~%s tokens\n\n"

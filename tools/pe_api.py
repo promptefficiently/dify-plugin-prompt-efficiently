@@ -87,7 +87,7 @@ def consume_usage(token):
     if status == 401:
         raise SessionExpired("PE session expired. Save the plugin credentials again with a fresh sign-in code.")
     if status == 429:
-        raise PEError("The 5 free estimates for today are used. Upgrade to Pro at https://promptefficiently.com/app for unlimited estimates.")
+        raise PEError("The 5 free estimates for today are used. Upgrade to Pro at https://promptefficiently.com/app?ref=dify-plugin for unlimited estimates.")
     if status != 200 or not isinstance(payload.get("pro"), bool):
         raise PEError("PE quota check failed (%s). No estimate was counted." % (payload.get("error") or status))
     return payload["pro"], payload.get("remaining")
@@ -102,7 +102,7 @@ def ai_rewrite(token, text, mode):
     if status == 401:
         raise SessionExpired("PE session expired. Save the plugin credentials again with a fresh sign-in code.")
     if status == 429:
-        raise PEError("The free AI rewrites are used on this PE account. Upgrade to Pro at https://promptefficiently.com/app for more.")
+        raise PEError("The free AI rewrites are used on this PE account. Upgrade to Pro at https://promptefficiently.com/app?ref=dify-plugin for more.")
     if status != 200:
         raise PEError("PE rewrite failed (%s)." % (payload.get("error") or status))
     return payload
