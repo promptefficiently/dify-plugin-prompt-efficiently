@@ -18,7 +18,7 @@ class EstimatePromptTool(Tool):
         platform_id = (tool_parameters.get("platform") or "").strip().lower()
         platform = platform_by_id(platform_id)
         if not platform:
-            raise PEError("Choose one of: chatgpt, claude, gemini, grok, town, manus, lovable, bolt, replit, kimi, qwen_chat, v0, elevenlabs, suno, runway, pika, openai_api, anthropic_api, gemini_api, deepseek, xai_api, mistral, groq, together, fireworks, openrouter, qwen, zhipu, moonshot, cohere, ollama.")
+            raise PEError("Choose one of: chatgpt, claude, gemini, grok, town, manus, lovable, bolt, replit, kimi, qwen_chat, v0, elevenlabs, suno, runway, pika, le_chat, perplexity, zai_chat, character_ai, higgsfield, openai_api, anthropic_api, gemini_api, deepseek, xai_api, mistral, groq, together, fireworks, openrouter, qwen, zhipu, moonshot, cohere, ollama.")
         size = (tool_parameters.get("size") or "medium").strip().lower()
         if size not in ("small", "medium", "big"):
             size = "medium"

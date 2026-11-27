@@ -5,7 +5,7 @@ identity:
     en_US: Estimate prompt cost
 description:
   human:
-    en_US: Rough estimate of what a prompt will cost on an AI product (ChatGPT, Claude, Gemini, Grok, Town AI, Manus, Lovable, Bolt, Replit, Kimi, Qwen Chat, v0, ElevenLabs, Suno, Runway or Pika) or an API model (OpenAI, Anthropic, Gemini, DeepSeek, xAI, Mistral, Groq, Together, Fireworks, OpenRouter, Qwen, Zhipu GLM, Moonshot Kimi, Cohere or Ollama) before you send it. The maths runs inside this plugin - your prompt text is never sent to Prompt Efficiently for this tool. Each estimate counts toward the account's free 5 estimates a day (Pro is unlimited). Estimates are rough guides, not quotes or balance readings.
+    en_US: Rough estimate of what a prompt will cost on an AI product (ChatGPT, Claude, Gemini, Grok, Town AI, Manus, Lovable, Bolt, Replit, Kimi, Qwen Chat, v0, ElevenLabs, Suno, Runway, Pika, Le Chat, Perplexity, Z.ai chat, Character.ai or Higgsfield) or an API model (OpenAI, Anthropic, Gemini, DeepSeek, xAI, Mistral, Groq, Together, Fireworks, OpenRouter, Qwen, Zhipu GLM, Moonshot Kimi, Cohere or Ollama) before you send it. The maths runs inside this plugin - your prompt text is never sent to Prompt Efficiently for this tool. Each estimate counts toward the account's free 5 estimates a day (Pro is unlimited). Estimates are rough guides, not quotes or balance readings.
   llm: Estimate the rough usage cost (messages, credits, tokens or dollars) of a prompt on a named AI product or API model before sending it. Consumer products return usage ranges and, for credit-based tools, a rough guide to that tool's own free plan; API providers (openai_api, anthropic_api, gemini_api, deepseek, xai_api, mistral, groq, together, fireworks, openrouter, qwen, zhipu, moonshot, cohere, ollama) return a per-call dollar range from input plus output tokens. Returns a range, a verdict, and the rough input token count. Use before running an expensive prompt. The prompt text stays local; estimates are rough, not quotes.
 parameters:
   - name: prompt
@@ -87,6 +87,16 @@ parameters:
         label: {en_US: Runway}
       - value: pika
         label: {en_US: Pika}
+      - value: le_chat
+        label: {en_US: Le Chat}
+      - value: perplexity
+        label: {en_US: Perplexity}
+      - value: zai_chat
+        label: {en_US: Z.ai chat}
+      - value: character_ai
+        label: {en_US: Character.ai}
+      - value: higgsfield
+        label: {en_US: Higgsfield}
       - value: ollama
         label: {en_US: Ollama (local models)}
   - name: size

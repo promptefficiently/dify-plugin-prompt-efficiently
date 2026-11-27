@@ -4,7 +4,7 @@ identity:
   label:
     en_US: Prompt Efficiently
   description:
-    en_US: Rough prompt cost estimates for ChatGPT, Claude, Gemini, Grok, Town AI, Manus, Lovable, Bolt, Replit, Kimi, Qwen Chat, v0, ElevenLabs, Suno, Runway and Pika, plus an AI rewrite that shortens a prompt while keeping its goal. Requires a free Prompt Efficiently account (promptefficiently.com).
+    en_US: Rough prompt cost estimates for ChatGPT, Claude, Gemini, Grok, Town AI, Manus, Lovable, Bolt, Replit, Kimi, Qwen Chat, v0, ElevenLabs, Suno, Runway, Pika, Le Chat, Perplexity, Z.ai chat, Character.ai and Higgsfield, plus an AI rewrite that shortens a prompt while keeping its goal. Requires a free Prompt Efficiently account (promptefficiently.com).
   icon: icon.svg
   tags:
     - productivity

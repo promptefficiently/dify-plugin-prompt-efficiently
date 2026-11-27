@@ -1,4 +1,4 @@
-version: 0.1.4
+version: 0.1.5
 type: plugin
 author: promptefficiently
 repo: https://github.com/promptefficiently/dify-plugin-prompt-efficiently
@@ -7,7 +7,7 @@ name: prompt_efficiently
 label:
   en_US: Prompt Efficiently
 description:
-  en_US: Estimate what a prompt will cost on ChatGPT, Claude, Gemini, Grok, Town AI, Manus, Lovable, Bolt, Replit, Kimi, Qwen Chat, v0, ElevenLabs, Suno, Runway and Pika before you send it, and get a shorter rewrite that aims to do the same job for less. Estimates are rough guides, not quotes. A free Prompt Efficiently account is required.
+  en_US: Estimate what a prompt will cost on ChatGPT, Claude, Gemini, Grok, Town AI, Manus, Lovable, Bolt, Replit, Kimi, Qwen Chat, v0, ElevenLabs, Suno, Runway, Pika, Le Chat, Perplexity, Z.ai chat, Character.ai and Higgsfield before you send it, and get a shorter rewrite that aims to do the same job for less. Estimates are rough guides, not quotes. A free Prompt Efficiently account is required.
 icon: icon.svg
 resource:
   memory: 268435456
