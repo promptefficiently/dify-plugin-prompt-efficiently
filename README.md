@@ -2,14 +2,14 @@
 
 Estimate what a prompt will cost on an AI product **before** you send it, and get a shorter rewrite that aims to do the same job for less - inside any Dify Chatflow, Workflow or Agent.
 
-- **Estimate prompt cost**: rough usage estimate (messages, credits, tokens or dollars) for ChatGPT, Claude, Gemini, Grok, Town AI, Manus, Lovable, Bolt and Replit, plus per-call dollar estimates for API models (OpenAI, Anthropic, Gemini, DeepSeek, xAI, Mistral, Groq, Together, Fireworks, OpenRouter, Qwen, Zhipu GLM, Moonshot Kimi and Cohere APIs, and free local models via Ollama), with a fits / tight / over verdict against the plan's allowance and the cheapest free alternative. The maths runs inside this plugin; **your prompt text is never sent to Prompt Efficiently for an estimate.**
+- **Estimate prompt cost**: rough usage estimate (messages, credits, tokens or dollars) for ChatGPT, Claude, Gemini, Grok, Town AI, Manus, Lovable, Bolt and Replit, plus per-call dollar estimates for API models (OpenAI, Anthropic, Gemini, DeepSeek, xAI, Mistral, Groq, Together, Fireworks, OpenRouter, Qwen, Zhipu GLM, Moonshot Kimi and Cohere APIs, and free local models via Ollama), with a fits / tight / over verdict against the plan's allowance and, on credit-based tools, a rough guide to that tool's own free plan. The maths runs inside this plugin; **your prompt text is never sent to Prompt Efficiently for an estimate.**
 - **Prompt Efficiently rewrite**: sends the prompt to Prompt Efficiently's live rewrite service (only when you turn on the 18+ consent in the plugin settings) and returns a shorter version to review. Modes: shorter, clearer, more specific.
 
 Estimates are rough guides, not quotes, bills or balance readings.
 
 ## Requirements
 
-A Prompt Efficiently account. Free accounts include 5 estimates a day and 5 AI rewrites; Pro (£9.99/month or £99/year) is unlimited estimates and more rewrites. Sign up at https://promptefficiently.com/app - email sign-in, no passwords.
+A Prompt Efficiently account. Free accounts include 5 estimates a day and 5 AI rewrites; Pro (£9.99/month or £99/year) is unlimited estimates and more rewrites. Sign up at https://promptefficiently.com/app - email sign-in, no passwords. The plugin calls https://promptefficiently.com (the Prompt Efficiently API) to check your account, count estimates and run rewrites. There is no separate API key: you sign in once with your account email and a 6-digit code (see Setup).
 
 ## Setup
 
@@ -31,7 +31,7 @@ Codes expire after 10 minutes. If a session expires later, repeat steps 2-3.
 | size | no | small, medium (default) or big. |
 | plan | no | Paid plan id on that product, e.g. plus, pro, max, starter, core. Empty = free plan. |
 
-Returns the estimated range, verdict, rough input-token count, the plan's allowance context, a cheapest free alternative where one exists, and how many free estimates remain today. Each call counts as one estimate toward the account's allowance (Free: 5 a day; Pro: unlimited).
+Returns the estimated range, verdict, rough input-token count, the plan's allowance context, a rough guide to the tool's own free plan where it has one, and how many free estimates remain today. Each call counts as one estimate toward the account's allowance (Free: 5 a day; Pro: unlimited).
 
 ### Prompt Efficiently rewrite
 
